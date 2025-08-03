@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced ML Loan Risk Predictor</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>  Loan Risk Predictor </h1>
+            <p> Made With ML </p>
+            <div class="version-badge">v2.0 • Neural Network Enhanced</div>
+        </div>
+        
+        <div class="main-grid">
+            <!-- Input Form -->
+            <div class="card">
+                <h2 style="margin-bottom: 25px; color: #c3c4c7ea; text-align: center; font-weight: 700; font-family: 'Times New Roman', Times, serif; font-size: 300%; text-decoration: underline;"> Run Tests</h2>
+                <form id="loanForm">
+                    <div class="form-section">
+                        <h3> Financial Situation </h3>
+                        <div class="form-group">
+                            <label for="income">Annual Income ($)</label>
+                            <input type="number" id="income" placeholder="75000" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loanAmount">Loan Amount ($)</label>
+                            <input type="number" id="loanAmount" placeholder="25000" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="existingDebt">Monthly Debt ($)</label>
+                            <input type="number" id="existingDebt" placeholder="800" min="0" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3> Personal Information </h3>
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" placeholder="32" min="18" max="80" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="employment">Employment</label>
+                            <select id="employment" required>
+                                <option value=""> Choose </option>
+                                <option value="full-time">Full-time</option>
+                                <option value="part-time">Part-time</option>
+                                <option value="self-employed">Self-employed</option>
+                                <option value="unemployed">Unemployed</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="creditHistory">Credit History </label>
+                            <input type="number" id="creditHistory" placeholder="8" min="0" max="50" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3> Other Factors </h3>
+                        <div class="form-group">
+                            <label for="education">Education Level</label>
+                            <select id="education" required>
+                                <option value="">Choose</option>
+                                <option value="high-school">High School</option>
+                                <option value="bachelor">Bachelor's</option>
+                                <option value="master">Master's</option>
+                                <option value="phd">PhD</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="homeOwnership">Home Status</label>
+                            <select id="homeOwnership" required>
+                                <option value=""> Choose </option>
+                                <option value="own">Own</option>
+                                <option value="mortgage">Mortgage</option>
+                                <option value="rent">Rent</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="analyze-btn" id="analyzeBtn">
+                        Run Diagnostic
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Results -->
+            <div class="card results" id="results">
+                <div class="processing-animation" id="processing">
+                    <div class="spinner"></div>
+                    <p> Fetching Data </p>
+                    <p style="font-size: 0.9em; opacity: 0.7; margin-top: 10px; font-family: 'Times New Roman', Times, serif; font-weight: 500px; font-size: 90%;"> Please Wait... </p>
+                </div>
+                
+                <div id="resultsContent" style="display: none;">
+                    <h2 style="font-size: 200%; margin-bottom: 25px; color: #afb0b4; font-family: 'Times New Roman', Times, serif; font-weight: 500; text-align: center;"> Results Fetched </h2>
+                    
+                    <div class="ml-stats">
+                        <div class="stat-card">
+                            <div class="stat-value" id="confidence">--</div>
+                            <div class="stat-label">Model Confidence</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value" id="processing-time">--</div>
+                            <div class="stat-label">Process Speed</div>
+                        </div>
+                    </div>
+                    
+                    <div class="risk-visualization">
+                        <div class="risk-meter">
+                            <div class="risk-score-display">
+                                <div class="risk-score-value" id="scoreValue">--</div>
+                                <div class="risk-level-text" id="riskLevel">Analyzing...</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="decision-banner" id="decision">
+                        Processing...
+                    </div>
+                    
+                    <div class="ml-insights">
+                        <h4 style="margin-bottom: 15px; color: #c3c3c9; text-align: center; font-family: 'Times New Roman', Times, serif; font-size: 135%;"> Risk Factors Analyzed</h4>
+                        <div id="insightsList">
+                            <!-- Insights populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature Importance -->
+            <div class="card results" id="featureCard">
+                <h3 style="margin-bottom: 20px; color: #cbcbcc; font-family: 'Times New Roman', Times, serif; font-size: 140%; text-decoration: line-through;"> Percentages Analyzed</h3>
+                <p style="font-size: 0.9em; opacity: 0.8; margin-bottom: 20px; font-family: 'Times New Roman', Times, serif; font-weight: 500; text-align: center; font-size: 130%;">
+                    Impact Percentages 
+                </p>
+                
+                <div class="feature-importance" id="featureImportance">
+                    <!-- Feature bars populated by JS -->
+                </div>
+                
+                <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-family: 'Times New Roman', Times, serif; font-size: 0.9em; color: #c7c7c9;">
+                    <h4 style="color: #c7c7c9; margin-bottom: 15px;"> Shivang Patel 2025 </h4>
+                    <div style="font-size: 0.9em; opacity: 0.8; line-height: 1.6; font-family: 'Times New Roman', Times, serif; font-weight: 500;">
+                        <p><strong>Algorithm:</strong> Ml Analyzing Big Data </p>
+                        <p><strong>Model:</strong> Neural Network</p>
+                        <p><strong>Last Updated:</strong> July 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

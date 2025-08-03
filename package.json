@@ -1,0 +1,28 @@
+{
+  "name": "loan-risk-predictor",
+  "version": "1.0.0",
+  "description": "Advanced ML-powered loan risk assessment system",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 3000"
+  },
+  "keywords": [
+    "machine-learning",
+    "fintech",
+    "loan-assessment",
+    "risk-analysis",
+    "credit-scoring"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@vitejs/plugin-legacy": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
