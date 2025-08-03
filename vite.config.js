@@ -7,11 +7,10 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: true,
     minify: 'terser',
+    // Removed invalid manualChunks
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['module1', 'module2'] // Add any large dependencies here
-        }
+        // You can add valid manualChunks here if needed
       }
     }
   },
