@@ -376,13 +376,13 @@ class LoanRiskPredictor {
         const decision = document.getElementById('decision');
         
         if (riskScore <= 35) {
-            decision.textContent = '✅ LOAN APPROVED';
+            decision.textContent = ' LOAN APPROVED';
             decision.className = 'decision-banner approved';
         } else if (riskScore <= 65) {
-            decision.textContent = '⚠️ REQUIRES MANUAL REVIEW';
+            decision.textContent = ' REQUIRES MANUAL REVIEW';
             decision.className = 'decision-banner review';
         } else {
-            decision.textContent = '❌ LOAN REJECTED';
+            decision.textContent = ' LOAN REJECTED';
             decision.className = 'decision-banner rejected';
         }
     }
