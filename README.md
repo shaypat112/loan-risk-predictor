@@ -1,8 +1,8 @@
-# 🤖 Advanced ML Loan Risk Predictor
+#Machine Learning Loan-Risk Predictor
 
 A sophisticated machine learning-powered loan risk assessment system built with modern web technologies.
 
-## 🌟 Features
+## Features
 
 - **Advanced ML Algorithms**: Simulates gradient boosting classifier with 94.7% accuracy
 - **Real-time Processing**: Neural network-style analysis with processing animations
@@ -11,15 +11,14 @@ A sophisticated machine learning-powered loan risk assessment system built with 
 - **Professional Analytics**: Confidence scores, processing times, and detailed insights
 - **Multiple Risk Factors**: Income, debt ratios, employment, credit history, education, and more
 
-## 🛠️ Tech Stack
+## Code
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript (ES6+)
 - **Build Tool**: Vite (fast development and optimized builds)
 - **Styling**: Custom CSS with modern features (gradients, backdrop-filter, animations)
 - **Architecture**: Modular ES6 classes and object-oriented design
 
-## 🚀 Quick Start
-
+## Start
 ### Prerequisites
 
 - Node.js 16+ installed
@@ -50,14 +49,14 @@ A sophisticated machine learning-powered loan risk assessment system built with 
 
 5. **Open browser** - Vite will automatically open http://localhost:3000
 
-## 📜 Available Scripts
+##  Available Scripts
 
 - `npm run dev` - Start development server with hot reload
 - `npm run build` - Build optimized production version
 - `npm run preview` - Preview production build locally
 - `npm run serve` - Serve production build on port 3000
 
-## 🏗️ Project Structure
+## 🏗 Project Structure
 
 ```
 loan-risk-predictor/
@@ -92,7 +91,7 @@ The system simulates a sophisticated ML pipeline:
 6. **Home Status** (5% weight) - Homeownership status
 7. **Age Factor** - Demographic considerations
 
-## 🎯 Future Enhancements
+## Future Enhancements
 
 ### Phase 2: Real ML Integration
 
@@ -150,7 +149,7 @@ Try these test scenarios:
 - Education: High School
 - Home: Rent
 
-## 🤝 Contributing
+##  Contributing
 
 This is a learning project! Feel free to:
 
@@ -167,7 +166,7 @@ MIT License - feel free to use this for learning and commercial projects.
 
 ## Shivang Patel
 
-**Your Name**
+Shivang Harish Patl
 
 - GitHub: [shaypat112](https://github.com/shaypat112)
 - LinkedIn: [Shivang Patel ](https://linkedin.com/in/shivangpatel)
